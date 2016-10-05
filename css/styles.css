@@ -24,7 +24,7 @@ body {
 }
 
 /* Rectangle: */
-.ticker {
+.ticker-holder {
 	height:77px;
 	padding:5px;
 	padding-left:15px;
@@ -33,6 +33,11 @@ body {
 	font-family: Calibri-Bold;
 	font-size: 22px;
 	color: #406C7D;
+}
+
+.ticker {
+	max-width:650px;
+	margin:auto;
 }
 
 .ticker-main {
@@ -70,6 +75,10 @@ body {
 	margin-top:30px;
 	width:100%;
 	padding:10px;
+	padding-bottom: 45px;
+	max-width:400px;
+	margin:auto;
+
 }
 
 .form-control {
@@ -94,7 +103,7 @@ body {
 
 
 .bus-account-holder {
-	padding-bottom:45px;
+	/*padding-bottom:45px;*/
 }
 
 
@@ -121,13 +130,9 @@ body {
   background-color: #EEF2F3;
 }
 
-
-
 .footer p {
-	line-height: 50px
+	line-height: 60px
 }
-
-
 
 
 .footer a {
@@ -137,6 +142,25 @@ body {
 
 
 
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	body {
+	  background: url('../img/people.jpg')
+	}
+
+	.footer {
+		background-color: white
+	}
+
+	.userform {
+    background-color: white;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 5px;
+	}
+
+
+}
 
 
 
