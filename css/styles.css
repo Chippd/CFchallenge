@@ -81,7 +81,7 @@ body {
 
 }
 
-.form-control {
+.userform .form-control {
 	text-align:center;
 	height:45px;
 	max-width:300px;
@@ -131,7 +131,8 @@ body {
 }
 
 .footer p {
-	line-height: 60px
+	line-height: 60px;
+	margin:0;
 }
 
 
@@ -139,6 +140,25 @@ body {
 	font-weight: 700
 }
 
+
+.form-col {
+	border-left: 1px solid lightgrey;
+	margin-bottom:35px;
+}
+
+
+.form2 {
+	max-width: 400px;
+}
+
+.form-spacer {
+	height:40px;
+}
+
+.page2-row {
+	max-width: 750px;
+	margin: 30px auto;
+}
 
 
 
@@ -157,6 +177,13 @@ body {
     padding: 30px;
     margin: 20px auto;
     border-radius: 5px;
+	}
+
+
+	.page2-row {
+    background: white;
+    border-radius: 5px;
+		padding: 35px;
 	}
 
 
