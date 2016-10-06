@@ -160,6 +160,27 @@ body {
 	margin: 30px auto;
 }
 
+#completion {
+	max-width:70px;
+	/*margin:auto;*/
+	font-weight: 400;
+	color:limegreen;
+	font-size:1.3em;
+}
+
+.affix {
+  top:100px;
+  /*margin-left:24px;*/
+  transition: all 1s ease;
+}
+
+.affix-top {
+
+}
+
+.affix-bottom {
+
+}
 
 
 /* Small devices (tablets, 768px and up) */

@@ -10,6 +10,29 @@
 
 		<title>Design Challenge</title>
 
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script type="text/javascript">
+
+		$( document ).ready(function() {
+		    console.log( "ready!" );
+		    $('#completion').affix({
+			  offset: {
+			    top: function () {
+			    	return (this.top = $('#completion').offset().top - $(".navbar-default").height()*2)
+			    },
+			    bottom: function () {
+			      return (this.bottom = $('.footer').outerHeight(true))
+			    }
+			  }
+			})
+		});
+
+
+
+		</script>
+
 	</head>
 	<body>
 		<div class="wrapper">
@@ -25,13 +48,13 @@
 				</div>
 			</div> -->
 
-<!-- 			<div class="ticker-holder">
+			<div class="ticker-holder">
 				<div class="ticker">
 					<p class="ticker-sub">just now</p>
 					<p class="ticker-main"><strong>Anne</strong> saved <strong>€35</strong> - €750 to $832</p>
 					<p class="ticker-sub">Co. Dublin</p>
 				</div>
-			</div> -->
+			</div>
 
 			<div class="container">
 				<div class="row" style="margin-top:30px">
@@ -42,8 +65,8 @@
 				</div>
 
 				<div class="row page2-row" class="">
-					<div class="col-xs-3 text-center">
-						<p class="completion">55% complete</p>
+					<div class="col-xs-3 text-center" style="min-width: 80px">
+						<p id="completion">55% complete</p>
 					</div>
 					<div class="col-xs-9 form-col">
 						<h3>About you</h3>
@@ -52,6 +75,7 @@
 							<fieldset>
 								<div class="form-group">
 									<select class="form-control">
+										<option selected disabled>Select</option>
 										<option>Mr</option>
 										<option>Ms</option>
 										<option>Mrs</option>
