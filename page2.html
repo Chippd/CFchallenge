@@ -27,6 +27,35 @@
 			    }
 			  }
 			})
+		    var elements = 0,
+		    		completion = 57;
+		     $('.form2 select').each(function() {
+				   var elem = $(this);
+
+				   elements++;
+
+				   // Save current value of element
+				   elem.data('oldVal', elem.val());
+
+				   // Look for changes in the value
+				   elem.bind("propertychange change click keyup input paste", function(event){
+				      // If value has changed...
+				      if (elem.data('oldVal') != elem.val()) {
+				       // Updated stored value
+				       elem.data('oldVal', elem.val());
+
+				       // Do action
+				       // console.log(elem.val())
+				       completion+=7
+				       console.log(completion)
+				       $('#completion span').text(completion +"%")
+				     }
+				   });
+				 });
+
+
+		     console.log(elements)
+
 		});
 
 
@@ -66,7 +95,7 @@
 
 				<div class="row page2-row" class="">
 					<div class="col-xs-3 text-center" style="min-width: 80px">
-						<p id="completion">55% complete</p>
+						<p id="completion"><span>57%</span></br>complete</p>
 					</div>
 					<div class="col-xs-9 form-col">
 						<h3>About you</h3>

@@ -168,6 +168,10 @@ body {
 	font-size:1.3em;
 }
 
+#completion span {
+	font-size:1.5em;
+}
+
 .affix {
   top:100px;
   /*margin-left:24px;*/
