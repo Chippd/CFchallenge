@@ -9,7 +9,7 @@ body {
   margin-bottom: 60px;
 }
 
-
+/*blue: #406C7D*/
 
 
 .navbar-default {
@@ -149,6 +149,12 @@ body {
 
 .form2 {
 	max-width: 400px;
+	color: #406C7D;
+}
+
+.form-text {
+	color:#406C7D;
+	font-weight:400;
 }
 
 .form-spacer {

@@ -16,7 +16,7 @@
 		<script type="text/javascript">
 
 		$( document ).ready(function() {
-		    console.log( "ready!" );
+		    // console.log( "ready!" );
 		    $('#completion').affix({
 			  offset: {
 			    top: function () {
@@ -27,34 +27,48 @@
 			    }
 			  }
 			})
-		    var elements = 0,
-		    		completion = 57;
-		     $('.form2 select').each(function() {
-				   var elem = $(this);
 
-				   elements++;
-
-				   // Save current value of element
-				   elem.data('oldVal', elem.val());
-
-				   // Look for changes in the value
-				   elem.bind("propertychange change click keyup input paste", function(event){
-				      // If value has changed...
-				      if (elem.data('oldVal') != elem.val()) {
-				       // Updated stored value
-				       elem.data('oldVal', elem.val());
-
-				       // Do action
-				       // console.log(elem.val())
-				       completion+=7
-				       console.log(completion)
-				       $('#completion span').text(completion +"%")
-				     }
-				   });
-				 });
+		  var updateCompletion = function(val){
+		  	var el = $('#completion span');
+		  	var num = el.text();
+		  	num = num.replace("%","");
+		  	var dif = val-num;
 
 
-		     console.log(elements)
+		  	for (var i = dif; i >= 0; i--) {
+		  			num++
+			  		el.text(num+"%")
+		  		
+		  	}
+
+		  }
+
+	    var elements = 0,
+	    		completion = 57;
+	     $('.form2 select').each(function() {
+			   var elem = $(this);
+
+			   elements++;
+
+			   // Save current value of element
+			   elem.data('oldVal', elem.val());
+
+			   // Look for changes in the value
+			   elem.bind("propertychange change click keyup input paste", function(event){
+			      // If value has changed...
+			      if (elem.data('oldVal') != elem.val()) {
+			       // Updated stored value
+			       elem.data('oldVal', elem.val());
+
+			       // Do action
+			       // console.log(elem.val())
+			       completion+=7
+			       // console.log(completion);
+			       updateCompletion(completion)
+			       // $('#completion span').text(completion +"%")
+			     }
+			   });
+			 });
 
 		});
 
@@ -98,8 +112,8 @@
 						<p id="completion"><span>57%</span></br>complete</p>
 					</div>
 					<div class="col-xs-9 form-col">
-						<h3>About you</h3>
-						<p>(for legal reuirements)</p>
+						<h3 class="form-text">About you</h3>
+						<p class="form-text">(for legal reuirements)</p>
 						<form class="form2">
 							<fieldset>
 								<div class="form-group">
@@ -125,7 +139,7 @@
 								</div> -->
 
 								<div class="row form-group">
-								<p style="margin-left:15px">Date of birth</p>
+								<p style="margin-left:15px" class="form-text">Date of birth</p>
 									<div class="col-xs-4">
 											<select class="form-control">
 												<option disabled selected>day</option>
@@ -154,21 +168,6 @@
 							<div class="form-spacer">
 							</div>
 
-							<fieldset>
-								<div class="form-group">
-									<select class="form-control">
-										<option disabled selected>country of residence</option>
-										<option>Ireland</option>
-										<option>United Kingdom</option>
-										<option>Etc</option>
-									</select>
-								</div>
-
-								<div class="form-group">
-									<input type="text" name="user-occupation" class="form-control" placeholder="occupation">
-								</div>
-							</fieldset>
-
 
 
 							<div class="form-spacer">
@@ -176,7 +175,16 @@
 
 							<fieldset>
 								<div class="form-group">
-								<label>Main reason for joining CurrencFair?</label>
+									<label class="form-text">Country of residence</label>
+									<select class="form-control">
+										<option disabled selected>country of residence</option>
+										<option>Ireland</option>
+										<option>United Kingdom</option>
+										<option>Etc</option>
+									</select>
+								</div>
+								<div class="form-group">
+								<label class="form-text">Main reason for joining CurrencFair?</label>
 									<select class="form-control">
 										<option disabled selected>Select</option>
 										<option>a</option>
@@ -186,12 +194,12 @@
 								</div>
 
 								<div class="form-group">
-									<label>Occupation (for regulatory purposes)</label>
+									<label class="form-text">Occupation (for regulatory purposes)</label>
 									<input type="text" name="user-occupation" class="form-control" placeholder="occupation">
 								</div>
 
 								<div class="form-group">
-									<label>How did you hear about CurrencyFair?</label>
+									<label class="form-text">How did you hear about CurrencyFair?</label>
 									<input type="text" name="user-occupation" class="form-control" placeholder="or promo code">
 								</div>
 
